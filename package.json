@@ -1,0 +1,27 @@
+{
+  "name": "valorant-stats-app",
+  "version": "0.1.0",
+  "description": "Desktop app base for Valorant stats built with React and Electron.",
+  "main": "electron/main.js",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:react\" \"npm:dev:electron\"",
+    "dev:react": "vite --host 127.0.0.1",
+    "dev:electron": "wait-on tcp:5173 && cross-env VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "start": "electron ."
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.0.0",
+    "cross-env": "^10.0.0",
+    "electron": "^42.2.0",
+    "vite": "^7.0.0",
+    "wait-on": "^8.0.0"
+  }
+}
